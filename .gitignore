@@ -1,0 +1,36 @@
+﻿# ==============================================================================
+# .gitignore - Consulta Transporte Escolar 2026 (Alcaldía de Timbío, Cauca)
+# ==============================================================================
+
+# Archivos de auditoria interna, depuracion y revision manual
+_privado_revision_manual/
+*descartados*
+postulantes_descartados.json
+
+# Scripts de automatización y temporales de desarrollo
+*.ps1
+*.sh
+*.bat
+scratch/
+temp/
+tmp/
+*.tmp
+*.log
+
+# Archivos del sistema operativo y editores
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Cache y entornos locales
+.cache/
+.parcel-cache/
+dist/
+.env
+.env.local
+.env.*.local
