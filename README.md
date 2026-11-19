@@ -1,9 +1,9 @@
-# Consulta de Postulantes – Transporte Escolar 2026
+# Consulta de Postulantes – Transporte Escolar 2026 | Listado Definitivo
 ### Alcaldía Municipal de Timbío, Cauca
 **Secretaría de Gobierno y Participación Comunitaria**  
 **Portal Oficial de Referencia:** [https://www.timbio-cauca.gov.co/](https://www.timbio-cauca.gov.co/)
 
-Aplicación web pública, institucional, moderna, estática y responsive diseñada como una **extensión natural del portal oficial de la Alcaldía de Timbío**. Permite que padres de familia y acudientes consulten de manera ágil y sencilla si un estudiante se encuentra en el **Listado Preliminar de Postulantes al Subsidio Económico de Transporte Escolar – Vigencia 2026**, sin necesidad de descargar o revisar manualmente extensos documentos PDF ni iniciar sesión.
+Aplicación web pública, institucional, moderna, estática y responsive diseñada como una **extensión natural del portal oficial de la Alcaldía de Timbío**. Permite que padres de familia y acudientes consulten de manera ágil y sencilla si un estudiante se encuentra en el **Listado Definitivo de Postulantes al Subsidio Económico de Transporte Escolar – Vigencia 2026**, sin necesidad de descargar o revisar manualmente extensos documentos PDF ni iniciar sesión.
 
 ---
 
@@ -36,7 +36,7 @@ En estricto cumplimiento del principio de privacidad desde el diseño y la norma
    - Institución educativa.
    - Grado escolar.
    - **Acudiente (parcialmente anonimizado)**: Primer nombre completo, inicial del segundo nombre y primera letra del primer apellido con asteriscos (ej. `Sandra M. G***`, `Jose R. A***`, `Yohana D***`), ocultando completamente el segundo apellido.
-   - Estado: `Listado preliminar`.
+   - Estado: `Listado definitivo`.
 2. **Anonimización previa en el archivo de datos:** El nombre completo del acudiente **no existe en el archivo JSON público** (`data/postulantes.json`). Se almacena directamente ya anonimizado, evitando que se pueda extraer examinando el archivo o las herramientas de desarrollador del navegador.
 3. **Restricción total de búsqueda por acudiente:** El buscador consulta **únicamente** por el nombre y apellidos del estudiante. No es posible buscar, filtrar ni consultar por acudientes.
 4. **Datos sensibles estrictamente omitidos:** No se exponen números de documento de identidad, nivel de Sisbén, pertenencia étnica (indígena) ni condición de víctima.
@@ -60,11 +60,10 @@ En estricto cumplimiento del principio de privacidad desde el diseño y la norma
 │   └── bandera-timbio.png                   # Bandera del Municipio de Timbío
 │
 ├── data/
-│   ├── postulantes.json                     # 768 registros con acudiente previamente anonimizado
-│   └── postulantes_descartados.json         # 75 registros con error #REF! excluidos para revisión manual
+│   └── postulantes.json                     # 768 registros con acudiente previamente anonimizado
 │
 └── docs/
-    ├── Listado_preliminar_postulantes_Transporte_Escolar_2026_Timbio.pdf
+    ├── Listado_definitivo_Transporte_Escolar_2026_Timbio.pdf
     ├── Convocatoria_Subsidio_Transporte_Escolar_2026_Timbio.pdf
     └── Modificacion_Cronograma_Transporte_Escolar_2026.pdf
 ```
@@ -102,8 +101,8 @@ Para actualizar:
 
 Los documentos oficiales descargables se alojan en la carpeta [`docs/`](file:///d:/LIstado%20Estudiantes/docs/).
 
-1. Para actualizar el listado (por ejemplo, tras el periodo de subsanación o el listado definitivo), coloca el nuevo PDF dentro de la carpeta `docs/`.
-2. Puedes sobreescribir el archivo existente o darle un nuevo nombre.
+1. Para actualizar el listado o actos administrativos posteriores, coloca el nuevo PDF dentro de la carpeta `docs/`.
+2. Puedes sobreescribir el archivo existente o darle un nuevo nombre y actualizar `CONFIG.pdfListadoUrl` en `script.js`.
 
 ---
 
@@ -114,7 +113,7 @@ Los enlaces se centralizan en la cabecera de [`script.js`](file:///d:/LIstado%20
 ```javascript
 const CONFIG = {
   dataPath: 'data/postulantes.json',
-  pdfListadoUrl: 'docs/Listado_preliminar_postulantes_Transporte_Escolar_2026_Timbio.pdf',
+  pdfListadoUrl: 'docs/Listado_definitivo_Transporte_Escolar_2026_Timbio.pdf',
   pdfConvocatoriaUrl: 'docs/Convocatoria_Subsidio_Transporte_Escolar_2026_Timbio.pdf',
   pdfCronogramaUrl: 'docs/Modificacion_Cronograma_Transporte_Escolar_2026.pdf',
   minSearchLength: 3,

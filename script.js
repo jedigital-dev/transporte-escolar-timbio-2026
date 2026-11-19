@@ -10,7 +10,7 @@
 const CONFIG = {
   // Rutas a documentos oficiales y datos
   dataPath: 'data/postulantes.json',
-  pdfListadoUrl: 'docs/Listado_preliminar_postulantes_Transporte_Escolar_2026_Timbio.pdf',
+  pdfListadoUrl: 'docs/Listado_definitivo_Transporte_Escolar_2026_Timbio.pdf',
   pdfConvocatoriaUrl: 'docs/Convocatoria_Subsidio_Transporte_Escolar_2026_Timbio.pdf',
   pdfCronogramaUrl: 'docs/Modificacion_Cronograma_Transporte_Escolar_2026.pdf',
 
@@ -333,9 +333,9 @@ function renderStudents(students, searchTerms) {
       </div>
       <div class="card-student-footer">
         <span class="card-footer-label">Estado</span>
-        <span class="card-badge-status" title="Este listado es preliminar y se encuentra en etapa de revisión">
+        <span class="card-badge-status" title="Estudiante incluido en el listado definitivo oficial">
           <span class="badge-status-dot" aria-hidden="true"></span>
-          <span>Listado preliminar</span>
+          <span>Listado definitivo</span>
         </span>
       </div>
     `;
